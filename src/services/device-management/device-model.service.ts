@@ -22,7 +22,7 @@ export class DeviceModelService {
     @Inject(forwardRef(() => OrganizationService))
     private organizationService: OrganizationService
   ) {
-    this.avj = new AJV({ allErrors: true, missingRefs: "ignore", verbose: false });
+    this.avj = new AJV({ allErrors: true, missingRefs: "ignore", verbose: false, strict: false });
     this.avj.addSchema(deviceModelSchema, this.SCHEMA_NAME);
   }
 
